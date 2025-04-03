@@ -48,7 +48,7 @@ class AbstractModel(ABC):
     
     def get_checkpoint_path(self, model_name):
         """Helper method to get checkpoint directory path"""
-        checkpoint_dir = f"checkpoints/{model_name}/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        checkpoint_dir = f"checkpoints/{model_name}/"
         os.makedirs(checkpoint_dir, exist_ok=True)
         return os.path.join(checkpoint_dir, "weights-{epoch:02d}.weights.h5")
 
